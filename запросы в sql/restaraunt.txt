@@ -1,0 +1,23 @@
+CREATE DATABASE restaraunt;
+
+USE restaraunt;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100)
+);
+
+CREATE TABLE requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    date_time DATETIME,
+    contact VARCHAR(20),
+    count_quests INT(10),
+    comment VARCHAR(100),
+    status VARCHAR(50) DEFAULT 'новая',
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
