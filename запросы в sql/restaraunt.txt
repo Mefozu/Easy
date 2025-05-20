@@ -16,7 +16,7 @@ CREATE TABLE requests (
     user_id INT,
     date_time DATETIME,
     contact VARCHAR(20),
-    count_quests INT(10),
+    count_guests INT(10),
     comment VARCHAR(100),
     status VARCHAR(50) DEFAULT 'новая',
     FOREIGN KEY (user_id) REFERENCES users(id)
